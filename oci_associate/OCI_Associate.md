@@ -28,7 +28,7 @@ Off-box Network Virtualization: As the name implies, all the network virtualizat
 
 ## IAM
 
-![pic1](/images/pic1.png)
+![pic1](images/pic1.png)
 
 ### Policy Syntax
 
