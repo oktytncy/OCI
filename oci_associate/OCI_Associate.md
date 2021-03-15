@@ -91,25 +91,6 @@ Class A: /8
 Class B. /16
 Class C: /24
 
-/27 hiç birisine dahil değildir. Yukarıda /27'de 3 birim kırmızı işaretlenmiştir. Bunun anlamı bu 3 bit'in subnetwork tarafından ödünç alındığın gösterir. Ve bu şekilde subnet mantığı kullanılabilir.
-
-224'de, 128 + 64 + 32 denkeminden gelmektedir.
-
-Bir kere oluştuktan sonra primary CIDR (Classes Inter-Domain Routing) değiştirilemez. Full block range yani IP address length 32’dir. Bit tanımı max 28, min ise 16 olabilir.
-
-**Örnek:** 10.0.0.0/28 tanımlarsak, bunun anlamı 28’i subnetler ve available instance’lar tarafından alınır. Geriye kalan 4 bit anlamı da 24 yani 16 ip adresinin assign olduğudur.
-
-Örneğimizi 28 değil de 16 olarak düşünürsek, bu durumda yarısı network ve diğer yarısı network içinde bulunan instance’lar için olduğu anlamını taşır.
-
-28 yanlış bir seçim olacaktır. Bu seçim sadece account websitesi için kullanılacaksa olabilir. Ama bu da sonradan değiştirilemeyeceğinden, ilerleyen zamanlarda soruna neden olabilir.
-
-Sonradan değiştirmenin tek yolu, yeni bir VCN oluşturmak ve migrate etmektir.
-24 bit tanım olduğunu düşünelim. 32-24=8. 
-
-2<sup>8</sup> = 256 ip kalacaktır.
-
-10.0.0.0 incelersek, burada 10.0.0.4’den 10.0.0.254’e kadar toplam 256-5=251 ip verilebilir. Aşağıdaki ip’le atanamazlar. Default olarak aşağıdaki şekilde tahsis edileceklerdir.
-
 **10.0.0.0** Base Network
 **10.0.0.1** VCN router
 **10.0.0.2** DNS related
@@ -117,9 +98,6 @@ Sonradan değiştirmenin tek yolu, yeni bir VCN oluşturmak ve migrate etmektir.
 **10.0.0.255** Last IP
 
 **According to the Oracle doc, the first two (.0,.1,.2-actually 3) and the last IP addresses are reserved.**
-
-VCN içerisindeki subnet’ler basic TCP/IP kuralı gereği, overlap (çakışma durumu) olamazlar
-
 
 ## Intro VCN (Virtual Cloud Network)
 
