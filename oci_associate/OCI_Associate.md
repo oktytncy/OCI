@@ -56,7 +56,7 @@ Allow <**subject**> to <**verb**> <**resource-type**> in <**location**> where <*
 
 #### Verb + Permissions +  API Operation
 
-![pic2](/images/pic2.png)
+![pic2](images/pic2.png)
 
 
 ## Compartment
@@ -73,7 +73,7 @@ Three levels of compartments: A, B and C
 
 ## CIDR
 
-![pic3](/images/pic3.png)
+![pic3](images/pic3.png)
 
 192.168.1.0/24 would equate to IP range: 192.168.1.0 - 192.168.1.255
 
@@ -128,7 +128,7 @@ VCN içerisindeki subnet’ler basic TCP/IP kuralı gereği, overlap (çakışma
 * Supported OCI VCN size range is from /16 to /30. /8 does not supported.
 * Subnet D is a regional subnet
 
-![pic4](/images/pic4.png)
+![pic4](images/pic4.png)
 
 * Subnets can be designated as either
       * Private (instances contain private IP addresses assigned to VNICs)
@@ -144,7 +144,7 @@ VCN içerisindeki subnet’ler basic TCP/IP kuralı gereği, overlap (çakışma
 * Each VNIC has one primary private IP; can have additional private IPs called secondary private IPs
 * Up to 31 secondary additional private IPs
 
-![pic5](/images/pic5.png)
+![pic5](images/pic5.png)
 
 * When a secondary VNIC is added, new Ethernet device is added and is recognized by the instance OS
       * VM1 - single VNIC instance
@@ -153,7 +153,7 @@ VCN içerisindeki subnet’ler basic TCP/IP kuralı gereği, overlap (çakışma
 
 ### Public IP
 
-![pic6](/images/pic6.png)
+![pic6](images/pic6.png)
 
 **Public IP types:** Ephemeral and Reserved
 * **Ephemeral:** temporary and existing for the lifetime of the instance
@@ -175,14 +175,14 @@ unassigned and then reassigned to another instance)
 
 ## Routing and Gateways
 
-![pic7](/images/pic7.png)
+![pic7](images/pic7.png)
 
 * You can have only one internet gateway for a VCN.
 * After creating an internet gateway, youmust add a route for the gateway in the VCN's Route Table to enable traffic flow
 
 ## Route Table
 
-![pic8](/images/pic8.png)
+![pic8](images/pic8.png)
 
 * Route Table is contains rules about how IP packets can travel to different IP addresses out of the VCN.
 
@@ -209,7 +209,7 @@ unassigned and then reassigned to another instance)
 
 ### NAT(Network Address Translation) Gateway
 
-![pic10](/images/pic10.png)
+![pic10](images/pic10.png)
 
 * The following rule is means, send all traffic to the **NAT Gateway**
 
@@ -227,11 +227,11 @@ unassigned and then reassigned to another instance)
 
 * You can have more than one NAT gateway on a VCN, though a given subnet can route traffic to only a single NAT gateway.
 
-![pic9](/images/pic9.png)
+![pic9](images/pic9.png)
 
 ### Service Gateway
 
-![pic11](/images/pic11.png)
+![pic11](images/pic11.png)
 
 Any traffic from VCN that is destined for one of the supported OCI (Oracle Cloud Infrastructure) public services uses the instance's private IP address for routing, travels over OCI network fabric, and never traverses the internet. 
 
@@ -247,7 +247,7 @@ Service CIDR labels represent all the public CIDRs for a given Oracle service or
 
 ## Dynamic Routing Gateway
 
-![pic12](/images/pic12.png)
+![pic12](images/pic12.png)
 
 * A virtual router that provides a path for private traffic between VCN and destinations other than the internet like On-Premise Data Center.
 
@@ -264,7 +264,7 @@ Service CIDR labels represent all the public CIDRs for a given Oracle service or
 
 ### Local Peering Gateway (within region)
 
-![pic13](/images/pic13.png)
+![pic13](images/pic13.png)
 
 * VCN peering is the process of connecting multiple VCNs in same region.
 * Local VCN peering is the process of connecting two VCNs in the same region so that their resources can communicate using private IP addresses.
@@ -277,7 +277,7 @@ Service CIDR labels represent all the public CIDRs for a given Oracle service or
 
 ### Remote Peering Gateway (across region)
 
-![pic14](/images/pic14.png)
+![pic14](images/pic14.png)
 
 * Remote VCN peering is the process of connecting two VCNs in different regions so that their resources can communicate using private IP addresses.
 * Requires a remote peering connection (RPC) to be created on the DRGs (Dynamic Routing Gateway). RPC's job is to act as a connection point for a remotely peered VCN.
@@ -299,7 +299,7 @@ Service CIDR labels represent all the public CIDRs for a given Oracle service or
 
 ### Security List (SL)
 
-![pic15](/images/pic15.png)
+![pic15](images/pic15.png)
 
 - A common set of firewall rules associated with a subnet and applied to all instances launched inside the subnet.
       - Security list consists of rules that specify the types of traffic allowed in and out of the subnet
@@ -309,7 +309,7 @@ Service CIDR labels represent all the public CIDRs for a given Oracle service or
 
 ### Network Security Group (NSG)
 
-![pic16](/images/pic16.png)
+![pic16](images/pic16.png)
 
 - A network security group (NSG) provides a virtual firewall for a set of cloud resources that all have the same security posture.
       - NSG consists of set of rules that apply only to a set of VNICs of your choice in a single VCN
@@ -319,7 +319,7 @@ Service CIDR labels represent all the public CIDRs for a given Oracle service or
 
 #### SL + NSG
 
-![pic17](/images/pic17.png)
+![pic17](images/pic17.png)
 
 - We can use security lists alone, network security groups alone, or both together
 - **If you have security rules that you want to enforce for all VNICs in a VCN:** the easiest solution is to put the rules in one security list, and then associate that security list with all subnets in the VCN
@@ -330,7 +330,7 @@ Service CIDR labels represent all the public CIDRs for a given Oracle service or
 
 #### Stateful Security Rules
 
-![pic18](/images/pic18.png)
+![pic18](images/pic18.png)
 
 * Default Security List rules are stateful
 * Connection Tracking: when an instance receives traffic matching the stateful ingress rule, the response is tracked and automatically allowedregardless of any egress rules; similarly for sending traffic from the host
@@ -339,7 +339,7 @@ Service CIDR labels represent all the public CIDRs for a given Oracle service or
 
 #### Stateless Security Rules
 
-![pic19](/images/pic19.png)
+![pic19](images/pic19.png)
 
 * With stateless rules, response traffic is not automatically allowed
 * To allow the response traffic for a stateless ingress rule, you must create a corresponding stateless egress rule
@@ -404,7 +404,7 @@ The VCN Private Domain Name System (DNS) enables instances to use hostnames inst
 
 VPN – using a public network to make end to end connection between two private networks in a secure fashion.
 
-![pic20](/images/pic20.png)
+![pic20](images/pic20.png)
 
 - **Tunnel:** a way to deliver packets through the internet to private RFC 1918 addresses
 - **Authentication:** provides a mechanism to authenticate who you are
@@ -414,7 +414,7 @@ VPN – using a public network to make end to end connection between two private
 
 ### Dynamic Routing Gateway
 
-![pic21](/images/pic21.png)
+![pic21](images/pic21.png)
 
 - A virtual router that provides a path for private traffic between our VCN and destinations other than the internet.
 - We can use it to establish a connection with our on-premises network via IPsec VPN or FastConnect (private, dedicated connectivity)
@@ -423,7 +423,7 @@ VPN – using a public network to make end to end connection between two private
 
 ### VPN Connect (IPSec) - Workflow
 
-![pic22](/images/pic22.png)
+![pic22](images/pic22.png)
 
 * Create a Virtual Cloud Network (VCN)
 * Create a Dynamic Routing Gateway (DRG)
@@ -455,7 +455,7 @@ FastConnect provides a dedicated and private connection with higher bandwidth op
 
 ### FastConnect Use Scenarios
 
-![pic23](/images/pic23.png)
+![pic23](images/pic23.png)
 
 - Private Peering
       - Extension of the on premise network to the OCI VCN
@@ -545,11 +545,11 @@ Public IP is attached to the standby load balancer
 
 - **Architecture 1: *Regional Subnets - Recommended***
 
-![pic24](/images/pic24.png)
+![pic24](images/pic24.png)
 
 - **Architecture 2: *AD Specific Subnets***
 
-![pic25](/images/pic25.png)
+![pic25](images/pic25.png)
 
 - **Load Balancing Policiec:** Tells the load balancer how to distribute incoming traffic to the backend servers
       - **Round-robin:** Default policy, distributes incoming traffic sequentially to each server in a backends. After each server received a connection, the load balancer repeats the list in the same order.
@@ -576,17 +576,17 @@ Public IP is attached to the standby load balancer
 
 - **Architecture 1: *Regional Subnets***
 
-![pic26](/images/pic26.png)
+![pic26](images/pic26.png)
 
 - **Architecture 2: *AD Specific Subnets***
 
-![pic27](/images/pic27.png)
+![pic27](images/pic27.png)
 
 ## Compute
 
 #### Bare Metal, VM and Dedicated Hosts
 
-![pic28](/images/pic28.png)
+![pic28](images/pic28.png)
 
 VM compute instances runs on the same hardware as a Bare Metal instances, leveraging the same cloudoptimized hardware, firmware, software stack, and networking infrastructure.
 
@@ -614,7 +614,7 @@ very slight increase in run times
 
 **Oracle provided Images**
 
-https://docs.oracle.com/en-us/iaas/Content/Compute/References/images.htm
+https://docs.oracle.com/en-us/iaas/Content/Compute/Referencesimages.htm
 
 **Linux Images:**
 
@@ -656,7 +656,7 @@ https://cloud.oracle.com/iaas/whitepapers/deploying_custom_os_images.pdf
 
 **Bring your own Image (BYOI):**
 
-![pic29](/images/pic29.png)
+![pic29](images/pic29.png)
 
 The Bring Your Own Image (BYOI) feature enables you to bring your own versions of operating systems to the cloud as long as the underlying hardware supports it. The BYOI can help with the following scenarios:
 
@@ -732,7 +732,7 @@ Config files becomes a template and we could spin up multiple instances using th
 * Autoscaling enables you to automatically adjust the number of Compute instances in an instance pool based on performance metrics such as CPU or Memory utilization.
 * When an instance pool scales in, instances are terminated in this order: the number of instances is balanced across availability domains, and then balanced across fault domains. Finally, within a fault domain, the oldest instance is terminated first.
 
-![pic30](/images/pic30.png)
+![pic30](images/pic30.png)
 
 #### Instance Metadata and Lifecycle
 
@@ -799,7 +799,7 @@ Config files becomes a template and we could spin up multiple instances using th
 
 #### Working with OKE and OCIR on OCI
 
-![pic31](/images/pic31.png)
+![pic31](images/pic31.png)
 
 * Pay only for the OCI resources used to run your K8s clusters (VM's, Storage, LB, etc.)
 
@@ -852,7 +852,7 @@ Config files becomes a template and we could spin up multiple instances using th
 * Co-located regionally with Container Engine for low latency Docker image deploys
 * Leverages OCI for high performance, low latency and high availability
 
-![pic32](/images/pic32.png)
+![pic32](images/pic32.png)
 
 * Pay only for the OCI resources used to run your K8s clusters (VM’s, storage, LB, etc.) and store your images
 
@@ -1025,7 +1025,7 @@ With multipart uploads, individual parts of an object can be uploaded in paralle
 
 **NVMe SSD Persisted - Reboot/Pause**
 
-![pic33](/images/pic33.png)
+![pic33](images/pic33.png)
 
 With Oracle Cloud Infrastructure, companies can leverage NVMe for persistent storage to host databases and applications. 
 
@@ -1043,7 +1043,7 @@ RAID 6: Block-level striping with two parity blocks distributed across all membe
  
 ##### SLA for NVMe Performance
 
-![pic34](/images/pic34.png)
+![pic34](images/pic34.png)
 
 * OCI provides a service-level agreement (SLA) for NVMe performance
 * Measured against 4k block sizes with 100% random write workload on Dense IO shapes where the drive is in a steady-state of operation
@@ -1107,7 +1107,7 @@ Block Volume can also be read-only to prevent against accidental modification
 
 ##### Block Volume Offline Resize
 
-![pic35](/images/pic35.png)
+![pic35](images/pic35.png)
 
 The Oracle Cloud Infrastructure Block Volume service lets you expand the size of block volumes and boot volumes. You have three options to increase the size of your volumes:
 
@@ -1122,7 +1122,7 @@ The Oracle Cloud Infrastructure Block Volume service lets you expand the size of
 * Encrypted and stored in the Object Storage Service, and can be restored as new volumes to any Availability Domain within the same region (for multi-AD regions)
 * Can copy block volume backups from one-region to another
 
-![pic36](/images/pic36.png)
+![pic36](images/pic36.png)
 
 * Backups are done using point-in-time snapshot; therefore, while the backup is being performed in the background asynchronously, your applications can continue to access your data without any
 interruption or performance impact
@@ -1155,7 +1155,7 @@ interruption or performance impact
 
 ##### Volume Groups
 
-![pic37](/images/pic37.png)
+![pic37](images/pic37.png)
 
 * Group together block and boot volumes from multiple compartments across multiple compute instances in a volume group
 * You can use volume groups to create volume group backups and clones that are point-in-time and crash-consistent.
@@ -1221,7 +1221,7 @@ In order to take advantage of the larger size, you must first extend the root (L
 
 ##### Mount Target
 
-![pic38](/images/pic38.png)
+![pic38](images/pic38.png)
 
 * NFS endpoint that lives in your subnet of choice; AD-specific
 * Mount target has an IP address and DNS name that you can use in your mount command. **Example:** 10.0.0.6
@@ -1291,14 +1291,14 @@ Four distinct and separate layers of security with its own authorization entitie
 
 ##### Security Lists
 
-![pic39](/images/pic39.png)
+![pic39](images/pic39.png)
 
 Security List can be used as a virtual firewall to prevent NFS clients from mounting an FSS mount target (even in the same subnet). FSS needs;
 * Stateful ingress TCP ports 111, 2048 – 2050
 * Stateful ingress UDP ports 111 and 2048
 * Opening these ports enables traffic from Solaris, Linux, and Windows NFS clients
 
-![pic40](/images/pic40.png)
+![pic40](images/pic40.png)
 
 *For all subnets within VCN (e.g. 10.0.1.0/24) to access File System, change destination CIDR to 10.0.0.0/16; all rules stateful*
 
@@ -1313,7 +1313,7 @@ Security List can be used as a virtual firewall to prevent NFS clients from moun
   * **Access:** Read_Write
   * **Identity Squash:** None
 
-![pic41](/images/pic41.png)
+![pic41](images/pic41.png)
 
 * Client X, assigned to 10.0.0.0/24, requires Read/Write access to file system A, but not file system B
 * Client Y, assigned to 10.0.1.0/24, requires Read access to file system B, but no access to file system A
@@ -1374,7 +1374,7 @@ Security List can be used as a virtual firewall to prevent NFS clients from moun
 
 ##### VM DB Systems Storage Architecture 
 
-![pic42](/images/pic42.png)
+![pic42](images/pic42.png)
 
 * ASM relies on OCI Block Volume (based on NVMe) for mirroring data
 * Block volumes are mounted using iSCSI
@@ -1386,7 +1386,7 @@ Security List can be used as a virtual firewall to prevent NFS clients from moun
 
 ##### VM DB Systems Storage Architecture – Fast Provisioning Option 
 
-![pic43](/images/pic43.png)
+![pic43](images/pic43.png)
 
 * Linux Logical Volume Manager manages the filesystems used by the database for storing database files, redo logs, etc.
 * Block volumes are mounted using iSCSI
@@ -1398,7 +1398,7 @@ https://docs.oracle.com/en-us/iaas/Content/Database/References/fastprovisionings
 
 #### Bare Metal DB Systems 
 
-![pic44](/images/pic44.png)
+![pic44](images/pic44.png)
 
 * Bare Metal DB Systems rely on Bare Metal servers running Oracle Linux Oracle Database ASM for 12c +, ACFS for 11g DB Management Agent Oracle Linux 6.8
 * One-node database system:
@@ -1410,7 +1410,7 @@ https://docs.oracle.com/en-us/iaas/Content/Database/References/fastprovisionings
 
 ##### Bare Metal DB Systems Storage Architecture 
 
-![pic45](/images/pic45.png)
+![pic45](images/pic45.png)
 
 * ASM manages mirroring of NVMe disks
 * Disks are partitioned – one for DATA and one for RECO
@@ -1421,7 +1421,7 @@ https://docs.oracle.com/en-us/iaas/Content/Database/References/fastprovisionings
 
 #### Exadata DB Systems 
 
-![pic46](/images/pic46.png)
+![pic46](images/pic46.png)
 
 * Full Oracle Database with all advanced options
 * On fastest and most available database cloud platform
@@ -1450,7 +1450,7 @@ https://docs.oracle.com/en-us/iaas/Content/Database/References/fastprovisionings
 
 ##### Exadata DB Systems Storage Architecture 
 
-![pic47](/images/pic47.png)
+![pic47](images/pic47.png)
 
 * Backups provisioned on Exadata storage: ~ 40% of the available storage space allocated to DATA disk group and ~60% allocated to the RECO disk group
 * Backups not provisioned on Exadata storage: ~ 80% of the available storage space allocated to DATA disk group and ~20% allocated to the RECO disk group
@@ -1481,7 +1481,7 @@ https://docs.oracle.com/en-us/iaas/Content/Database/References/fastprovisionings
 
 *Note that Oracle Database 19c is only available on VM DB and Exadata DB Systems (as of September 2019)*
 
-![pic48](/images/pic48.png)
+![pic48](images/pic48.png)
 
 *Note that all editions include Oracle Database Transparent Data Encryption (TDE)*
 
@@ -1582,7 +1582,7 @@ https://www.oracle.com/cloud/price-list.html
 
 #### Autonomous Database 
 
-![pic49](/images/pic49.png)
+![pic49](images/pic49.png)
 
 | Service | Features | Use Cases |
 | ------- | -------- | --------- |
@@ -1602,7 +1602,7 @@ https://www.oracle.com/cloud/price-list.html
 
 ##### Autonomous Database - Choice of Cloud Deployment 
 
-![pic50](/images/pic50.png)
+![pic50](images/pic50.png)
 
 | | DBaaS VM or Bare Metal |Exadata Cloud Service or Cloud @Customer |Autonomous Serverless|Autonomous Dedicated |
 |-| ---------------------- |-----------------------------------------|---------------------|-------------------- |
@@ -1679,11 +1679,11 @@ Autonomous Database service supports :
 
 ##### Autonomous Data Warehouse: Architecture 
 
-![pic51](/images/pic51.png)
+![pic51](images/pic51.png)
 
 ##### Autonomous Transaction Processing: Architecture
 
-![pic52](/images/pic52.png)
+![pic52](images/pic52.png)
 
 ##### Getting Started with Autonomous Database
 
@@ -1700,7 +1700,7 @@ Autonomous Database service supports :
 
 ##### Auto Scaling Autonomous Database
 
-![pic53](/images/pic53.png)
+![pic53](images/pic53.png)
 
 *This picture shows how ADW service automatically scales OCPUs up when there is a demand for more computing power and then scales it down once the demand goes down.* 
 
@@ -1720,7 +1720,7 @@ needed to connect to your database service in the ADB Cloud.
 
 ##### Connecting to the Autonomous Database
 
-![pic54](/images/pic54.png)
+![pic54](images/pic54.png)
 
 > Connecting to Autonomous Database Warehouse (ADW) or Autonomous Transaction Processing (ATP) from Public Internet
 
@@ -1730,7 +1730,7 @@ needed to connect to your database service in the ADB Cloud.
 
 ##### Troubleshooting connectivity issues
 
-![pic55](/images/pic55.png)
+![pic55](images/pic55.png)
 
 * Ensure that the Access Control List for the Autonomous Database (ADB) has the necessary entries for CIDR Block ranges and IP addresses, as your use case dictates.
 * When connecting to ADB from a client computer behind a firewall, the firewall must permit the use of the port specified in the database connection when connecting to the servers in the connection. The default port number for Autonomous Data Warehouse is 1522 (find the port number in the connection string from the tnsnames.ora file in your credentials ZIP file). Your
@@ -1807,12 +1807,12 @@ firewall must allow access to servers within the .oraclecloud.com domain using (
 * Five pre-defined database services controlling priority and parallelism
 * Different services defined for Transactions and Reporting/Batch
 
-![pic56](/images/pic56.png)
+![pic56](images/pic56.png)
 
 ##### Autonomous Database - Dedicated
 
 **<span style="color:red">High Level Deployment Flow</span>**
-![pic57](/images/pic57.png)
+![pic57](images/pic57.png)
 
 * The Autonomous Dedicated database service provides a private database cloud running on dedicated Exadata Infrastructure in the Public Cloud.
 * It has multiple levels of isolation protects you from noisy or hostile neighbors.
@@ -1858,4 +1858,3 @@ https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/index.html
 
 **Exam Preparation Guide: OCI 2020 Architect Associate**
 https://learn-prodfapap.oracle.com/education/downloads/1Z0-1072-20/OU_1Z0-1072-OCI-Architect-Associate-2020-Exam-Study-Guide.pdf
-
