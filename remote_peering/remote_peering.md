@@ -59,7 +59,7 @@ Imagine that in each region you have multiple VCNs in a hub-and-spoke layout, as
     ```
     ![image4](print_screen/4.png)
 
-6. Add an Ingress Rule to the Default Security List for VCN-B-Spoke. with this rule, we are going to allow all traffic from VCN-A-Hub.
+6. Add an Ingress Rule to the Default Security List for VCN-B-Spoke. With this rule, we are going to allow all traffic from VCN-A-Hub.
 
     ```shell
     Source Type: CIDR
@@ -69,9 +69,9 @@ Imagine that in each region you have multiple VCNs in a hub-and-spoke layout, as
 
     ![image5](print_screen/5.png)
 
-7. Create Local Peering Gateway for VCN-B-Spoke named **LPG-BtoA**
+7. Create a Local Peering Gateway for VCN-B-Spoke named **LPG-BtoA**
 
-8. Add a route rule to the Default Route Table for VCN-B-Spoke. With this rule, all the traffic 10.0.1.0 which is are subnet-A is going to be pass through the LPG-BtoA
+8. Add a route rule to the Default Route Table for VCN-B-Spoke. With this rule, all the traffic 10.0.1.0/24 which is are subnet-A is going to be pass through the LPG-BtoA
 
     ```shell
     Target Type: Local Peering Gateway
@@ -81,7 +81,7 @@ Imagine that in each region you have multiple VCNs in a hub-and-spoke layout, as
 
     ![image6](print_screen/6.png)
 
-9. Add an Ingress Rule to Default Security List for VCN-A-Hub. With this rule, we are going to allow all traffic from VCN-B-Spoke
+9. Add an Ingress Rule to the Default Security List for VCN-A-Hub. With this rule, we are going to allow all traffic from VCN-B-Spoke
 
     ```shell
     Source Type: CIDR
@@ -91,7 +91,7 @@ Imagine that in each region you have multiple VCNs in a hub-and-spoke layout, as
 
     ![image7](print_screen/7.png)
 
-10. Create Local Peering Gateway for VCN-A-Hub named **LPG-AtoB**
+10. Create a Local Peering Gateway for VCN-A-Hub named **LPG-AtoB**
 
 11. Add a route rule to the Default Route Table for VCN-A-Hub. All the traffic 10.0.2.0/24 which is are subnet-B is going to be pass through the LPG-AtoB
 
@@ -103,7 +103,7 @@ Imagine that in each region you have multiple VCNs in a hub-and-spoke layout, as
 
     ![image8](print_screen/8.png)
 
-12. Go to the "Local Peering Gateways" tab in the "Networking/Virtual Cloud Networks/Virtual Cloud Network Details" path in VNC-A-HUB and click the "Establish Peering Connection" option to provide peer to peer connection.
+12. Go to "Local Peering Gateways" tab in the "Networking/Virtual Cloud Networks/Virtual Cloud Network Details" path in VNC-A-HUB and click the "Establish Peering Connection" option to provide peer to peer connection.
 
     ![image9](print_screen/9.png)
 
@@ -116,7 +116,7 @@ Imagine that in each region you have multiple VCNs in a hub-and-spoke layout, as
 
     ![image10](print_screen/10.png)
 
-13. Create an instance in the VNC-A-Hub with the following attributes.
+13. Create an instance in VNC-A-Hub with the following attributes.
 
     ```shell
     Name: instance-A
@@ -140,7 +140,7 @@ Imagine that in each region you have multiple VCNs in a hub-and-spoke layout, as
 
 15. After establishing the connecting to the instance-A, create ssh-keygen on instance-A with the following commands. 
 
-    *ssh-keygen will ask for a few questions, these steps can be skipped by pressing enter.*
+    * *ssh-keygen will ask for a few questions, these steps can be skipped by pressing enter.*
 
     ```shell
     [opc@instance-a ~]$ cd .ssh
@@ -217,9 +217,9 @@ Imagine that in each region you have multiple VCNs in a hub-and-spoke layout, as
 
 ### Establishing a remote peering connection between VCN-A-Hub and VCN-C-Hub.
 
-19. Go to the "Networking/Customer Connectivity/Dynamic Routing Gateway" path and create Dynamic Routing Gateway in Frankfurt region named **DRG-A**.
+19. Go to "Networking/Customer Connectivity/Dynamic Routing Gateway" path and create Dynamic Routing Gateway in Frankfurt region named **DRG-A**.
 
-20. Go to the "Networking/Virtual Cloud Networks/Virtual Cloud Network Details/Dynamic Routing Gateways" path and "Attach Dynamic Routing Gateway" for VNC-A-HUB
+20. Go to "Networking/Virtual Cloud Networks/Virtual Cloud Network Details/Dynamic Routing Gateways" path and "Attach Dynamic Routing Gateway" for VNC-A-HUB
 
     ![image13](print_screen/13.png)
 
@@ -238,20 +238,20 @@ Imagine that in each region you have multiple VCNs in a hub-and-spoke layout, as
     IP Protocol: All Protocols
     ```
 
-With this step, we created DRG, put a rule in the route table, and allow traffic with the added row in the security list.
+With this step, we created a DRG, add a rule in the route table, and allow traffic with the added row in the security list.
 
-23. Go to the "Networking/Customer Connectivity/Dynamic Routing Gateways/DRG-A/Remote Peering Connections" path and create remote peering connection named RPC-AtoC
+23. Go to "Networking/Customer Connectivity/Dynamic Routing Gateways/DRG-A/Remote Peering Connections" path and create remote peering connection named RPC-AtoC.
 
-* Copy Remote Peering Connection OCID from RPC-AtoC vertical ellipsis option.
+* Copy Remote Peering Connection OCID from RPC-AtoC vertical ellipsis menu.
 
     **Example:**
 	* ocid1.remotepeeringconnection.oc1.eu-frankfurt-1.aaaaaaaau7okrl5kogn5r4dpwaxpkemxtrv6lnbhjj73udp2wx44lezgtc6a
 
     ![image14](print_screen/14.png)
 
-24. Go to the "Networking/Customer Connectivity/Dynamic Routing Gateway" path and create Dynamic Routing Gateway in Phoenix region named **DRG-C**.
+24. Go to "Networking/Customer Connectivity/Dynamic Routing Gateway" path and create a Dynamic Routing Gateway in Phoenix region named **DRG-C**.
 
-25. Go to the "Networking/Virtual Cloud Networks/Virtual Cloud Network Details/Dynamic Routing Gateways" path and "Attach Dynamic Routing Gateway" for VNC-C-HUB
+25. Go to "Networking/Virtual Cloud Networks/Virtual Cloud Network Details/Dynamic Routing Gateways" path and "Attach Dynamic Routing Gateway" for VNC-C-HUB
 
     ![image15](print_screen/15.png)
 
@@ -272,7 +272,7 @@ With this step, we created DRG, put a rule in the route table, and allow traffic
 
 28. Go to the "Networking/Customer Connectivity/Dynamic Routing Gateways/DRG-C/Remote Peering Connections" path and create remote peering connection named RPC-CtoA
 
-* From RPC-CtoA vertical ellipsis option, click "Establish Connection" and set the required variables as follows.
+    * From RPC-CtoA vertical ellipsis menu, click "Establish Connection" and set the required variables as follows.
 
     ```shell
 	Region: eu-frankfurt-1
@@ -291,9 +291,9 @@ With this step, we created DRG, put a rule in the route table, and allow traffic
 
     * We are able to achieve connetivity between VCN-A and VCN-C (between Phoenix and Frankfurt regions)
 
- * As the next step, we are going to enable connetivity between the Spoke regions. If we try to ping from instance-b (VCN-B-Spoke Frankfurt) to instance-d (VCN-D-Spoke Phoenix), we wont be able to do that because we are not created a assosiated route table DRG and Local Peering Gateway.
+ * As the next step, we are going to enable connetivity between the Spoke regions. If we try to ping from instance-b (VCN-B-Spoke Frankfurt) to instance-d (VCN-D-Spoke Phoenix), we wont be able to do that because we are not created a assosiated route table, DRG and Local Peering Gateway.
 
-30. Go to the "Networking/Virtual Cloud Networks/Virtual Cloud Network Details/Route Tables" path for VCN-A-Hub and create two additional route tables to the respective Gateway which are DRG and LPG as follows.
+30. Go to "Networking/Virtual Cloud Networks/Virtual Cloud Network Details/Route Tables" path for VCN-A-Hub and create two additional route tables to the respective Gateway which are DRG and LPG as follows.
 
     ```shell
     Name: RT-DRG
@@ -334,15 +334,15 @@ With this step, we created DRG, put a rule in the route table, and allow traffic
 
 33. Assosiate the route tables:
 
-    * Go to the "Networking/Virtual Cloud Networks/Virtual Cloud Network Details/Dynamic Routing Gateways" path for VCN-A-Hub and associate the route table as **RT-DRG** from DRG-A vertical ellipsis menu.
+    * Go to "Networking/Virtual Cloud Networks/Virtual Cloud Network Details/Dynamic Routing Gateways" path for VCN-A-Hub and associate the route table as **RT-DRG** from DRG-A vertical ellipsis menu.
 
     ![image18](print_screen/18.png)
 
-    * Go to the "Networking/Virtual Cloud Networks/Virtual Cloud Network Details/Local Peering Gateways" path for VCN-A-Hub and associate the route table as **RT-LPG** from DRG-A vertical ellipsis menu.
+    * Go to "Networking/Virtual Cloud Networks/Virtual Cloud Network Details/Local Peering Gateways" path for VCN-A-Hub and associate the route table as **RT-LPG** from DRG-A vertical ellipsis menu.
 
     ![image19](print_screen/19.png)
 
-34. Add an Ingress Rule to Default Security List for VCN-A-Hub Spoke-D. 
+34. Add an Ingress Rule to the Default Security List for VCN-A-Hub. 
 
     ```shell
     Source Type: CIDR
@@ -353,12 +353,12 @@ With this step, we created DRG, put a rule in the route table, and allow traffic
 
     ![image20](print_screen/20.png)
 
-35. Go to the "Networking/Virtual Cloud Networks/VCN-B-Spoke/Route Table Details" and edit the listed rule to be "Destination CIDR Block: 0.0.0.0/0".
+35. Go to "Networking/Virtual Cloud Networks/VCN-B-Spoke/Route Table Details" and edit the listed rule to be "Destination CIDR Block: 0.0.0.0/0".
 
 	* All the traffic that is coming out from subnet-B(VNC-B) is going through the Local Peering Gateway. We could have added two more rules without editing, but to keep it simple, we went this way without adding more rules.
 
 
-36. Go to the "Networking/Virtual Cloud Networks/VCN-B-Spoke/Security List Details" path and add two Ingress Rules to Default Security List of VCN-B-Spoke for instance-c and instance-d.
+36. Go to "Networking/Virtual Cloud Networks/VCN-B-Spoke/Security List Details" path and add two Ingress Rules to Default Security List of VCN-B-Spoke for instance-c and instance-d.
 
     ```shell
 	Source Type: CIDR
@@ -376,7 +376,7 @@ With this step, we created DRG, put a rule in the route table, and allow traffic
 
 37. Go to the "Networking/Virtual Cloud Networks/Virtual Cloud Network Details/Route Tables" for VCN-C-Hub in the Phoenix region and create two additional routing tables named RT-DRG and RT-LPG.
 
-* For both of these, we are going to add some rules.
+    * For both of these, we are going to add some rules.
 
     ```shell
     For RT-DRG:
