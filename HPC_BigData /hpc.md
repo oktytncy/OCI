@@ -143,7 +143,7 @@ Larger files need larger block sizes.
 
 Do you want a lower-cost option or do you want the higher-cost option?
 
-![performance_tiers](/pics/performance_tiers.png)
+![performance_tiers](pics/performance_tiers.png)
 
 ```bash
 *  1 MB block size best for writing larger files. (OLAP based)
@@ -242,7 +242,7 @@ Common use cases include computational fluid dynamics, weather forecast modeling
 
 The following table lists the Block Volume service's throughput and IOPS performance numbers based on volume size for this option. IOPS and KB/s performance scales linearly per GB volume size up to the service maximums so you can predictably calculate the performance numbers for a specific volume size. If you're trying to achieve certain performance targets for volumes configured to use the Balanced performance level you can provision a minimum volume size using this table as a reference.
 
-![throughput](/pics/throughput.png)
+![throughput](pics/throughput.png)
 
 A Higher Performance Block Volume of size 800 GB or **Higher delivers 480 MB/s for 1MB Block Size.** Multiple Volumes can be attached to file server.
 
@@ -275,13 +275,13 @@ When the turbo frequency is mentioned, it is always how fast 1 core can spin.
 
 As you can see on the table to the below, the **all cores turbo frequency** is identical to one core turbo frequency for our chip.
 
-![processors](/pics/processors.png)
+![processors](pics/processors.png)
 
 **Reference:** [Intel® Xeon® Processor Scalable Family](https://www.intel.com/content/dam/www/public/us/en/documents/specification-updates/xeon-scalable-spec-update.pdf)
 
 #### Data Lake - ETL Processing
 
-![Services](/pics/Services.png)
+![Services](pics/Services.png)
 
 #### MPI: Message Passing Interface
 
@@ -366,7 +366,7 @@ Almost any parallel code is using MPI, especially when crossing over different n
 
 ##### Data Flow Execution Model
 
-![DataFlow](/pics/DataFlow.png)
+![DataFlow](pics/DataFlow.png)
 
 - Data Flow orchestrates job submissions via large Kubenertes clusters it maintains.
 - Jobs run in our service tenancy and access data in-place in customer tenancies. Natively integrated with OCI IAM for security.
@@ -439,17 +439,17 @@ Terasoft is a popular benchmark that measures the amount of time **to sort one t
 
 ##### TeraSort Detail
 
-![TeraSort](/pics/TeraSort.png)
+![TeraSort](pics/TeraSort.png)
 
 ### Example Architectures
 
 OCI Data Science service can use data from both the Autonomous Database and Object Storage for training. You could use the database here just for storage, but you could also apply part of the Machine Learning already directly of the database, and the continue with the second part of the pipeline with the Data Science service. 
 
-![Example Architecture1](/pics/ExampleArc1.png)
+![Example Architecture1](pics/ExampleArc1.png)
 
 In this arcitecture Analytics also included, imagine that you have an expert data scientist that actually uses the data preperation of Oracle Analytics in a visual way, and he or she can then continue with the process and build the model using the Data Science sevice to have fine control over the alorithm and it's hyperparameters.
 
-![Example Architecture1](/pics/ExampleArc2.png)
+![Example Architecture1](pics/ExampleArc2.png)
 
 ### Customer Scenario
 
@@ -512,7 +512,7 @@ The code is homegrown and has not changed much in the last decade. They will use
 4. You are building a file system that needs to handle large files with a lot of nodes reading at the same time. What minimum size of block volume maximizes throughput for large files?
 - **800 GB**
 
-![performance_tiers](/pics/performance_tiers.png)
+![performance_tiers](pics/performance_tiers.png)
 
 5. Which three data sources can Oracle data science draw from?
 - AWS S3
