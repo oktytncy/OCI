@@ -101,7 +101,7 @@ Preparation guide for OCI 2021 HPC and Big Data Solutions Associate
 All Current Bare Metal Shapes support the Ultra High Performance Level
 
 
-|Shape|OCPU|Memory (GB)|RAM/Core|Max Network Bandwidth|Max IOPS per Instance|Max Throughput per Instance (Block Volume)|Max Number of Attachments|Supports Ultra High Performance (UHP)|
+| Shape | OCPU | Memory (GB) | RAM per core |Max Network Bandwidth|Max IOPS per Instance|Max Throughput per Instance (Block Volume)|Max Number of Attachments|Supports Ultra High Performance (UHP)|
 |-----|----|-------|---|---|---------------------|---------------------|------------------------------------------|-------------------------|-------------------------------------|
 |**BM.Standard2.52**	|52	|768 |15 GB|2 x 25 Gbps|620,000|2.9 GB/s|32|Yes|
 |**BM.Standard.E3.128**	|128|2048|16 GB|2 x 50 Gbps|800,000|6 GB/s  |32|Yes|
