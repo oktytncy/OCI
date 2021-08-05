@@ -100,7 +100,7 @@ Preparation guide for OCI 2021 HPC and Big Data Solutions Associate
 
 All Current Bare Metal Shapes support the Ultra High Performance Level
 
-![bare_metal](pics/bare_metal.png)
+![bare_metal](pics/bmetal.png)
 
 - A **Block** is simply a unit of data that is read/written during an I/O operation.
 - The Block unit size could be 1 byte, 4 byte or 1 Mbyte. All IO operation will fetch this size of data. The default Block size on volumes is 4K.
