@@ -108,6 +108,8 @@ All Current Bare Metal Shapes support the Ultra High Performance Level
 - **Throughput** measures the number of bytes read or written per second.
     - ***Throughput (MB/s)*** = ***IOPS * Block Size****
 
+**Reference:** [Block Volume Performance](https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
+
 ##### Key Takeaways:
 - Throughput and Block Size have a direct relationship to each other. It means, large Block size will yield higher throughput.
 - As block size increases, it takes longer latency to read a single block, thus the # of IOPS decreases. Inversely, smaller block sizes yield higher IOPS. Like random IO work.
