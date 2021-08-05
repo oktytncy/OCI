@@ -5,7 +5,7 @@ Purpose
 -------------
 Preparation guide for OCI 2021 HPC and Big Data Solutions Associate 
 
-![first_screen](/pics/first_screen.jpeg)
+![first_screen](pics/first_screen.jpeg)
 
 - [OCI 2021 HPC and Big Data Solutions Associate](#oci-2021-hpc-and-big-data-solutions-associate)
   * [Overview of Infrastructure Resources](#overview-of-infrastructure-resources)
