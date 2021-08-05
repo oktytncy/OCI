@@ -100,17 +100,7 @@ Preparation guide for OCI 2021 HPC and Big Data Solutions Associate
 
 All Current Bare Metal Shapes support the Ultra High Performance Level
 
-| Shape | OCPU | Memory (GB) | RAM per core |Max Network Bandwidth|Max IOPS per Instance|Max Throughput per Instance (Block Volume)|Max Number of Attachments|Supports Ultra High Performance |
-| ----- | ---- | ------- | --- | --- | --------------------- | --------------------- | ------------------------------------------ | ------------------------- | ------------------------------------- |
-|**BM.Standard2.52**	|52	|768 |15 GB|2 x 25 Gbps|620,000|2.9 GB/s|32|Yes|
-|**BM.Standard.E3.128**	|128|2048|16 GB|2 x 50 Gbps|800,000|6 GB/s  |32|Yes|
-|**BM.Standard.E4.128**	|128|2048|16 GB|2 x 50 Gbps|800,000|6 GB/s  |32|Yes|
-|**BM.DenseIO2.52**	    |52	|768 |15 GB|2 x 25 Gbps|620,000|2.9 GB/s|32|Yes|
-|**BM.HPC2.36**	        |36	|384 |10 GB|1 x 25 Gbps and 1 x 100 Gbps RDMA|620,000|2.9 GB/s|32|Yes|
-|**BM.GPU3.8**	        |52 |GPU Memory: 128 and CPU Memory: 768 GB||2 x 50 Gbps|800,000|6 GB/s|32|Yes|
-|**BM.GPU4.8**	        |64	|GPU Memory: 320 and CPU Memory: 2048 GB||1 x 50 Gbps and 8 x 200 Gbps RDMA|800,000|6 GB/s|32|Yes|
-|**BM.Optimized3.36**	|36	|512 |14 GB|2 x 50 Gbps and 1 x 100 Gbps RDMA|800,000|6 GB/s|32|Yes|
-|**BM.Standard.A1.160**	|160|2048|13 GB|2 x 50 Gbps|800,000|6 GB/s|32|Yes|
+![bare_metal](pics/bare_metal.png)
 
 - A **Block** is simply a unit of data that is read/written during an I/O operation.
 - The Block unit size could be 1 byte, 4 byte or 1 Mbyte. All IO operation will fetch this size of data. The default Block size on volumes is 4K.
